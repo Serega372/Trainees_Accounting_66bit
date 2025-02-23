@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using TraineesAccounting.Api.Services;
 using TraineesAccounting.Persistence;
 using TraineesAccounting.Persistence.Abstract;
 using TraineesAccounting.Persistence.Repositories;
@@ -21,6 +22,7 @@ builder.Services.AddDbContext<DatabaseContext>(
 builder.Services.AddScoped<ITraineesRepository, TraineesRepository>();
 builder.Services.AddScoped<IProjectsRepository, ProjectsRepository>();
 builder.Services.AddScoped<IInternshipDirectionsRepository, InternshipDirectionsRepository>();
+builder.Services.AddAutoMapper(typeof(AppMappingProfile));
 
 var app = builder.Build();
 
