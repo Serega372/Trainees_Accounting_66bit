@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using TraineesAccounting.Persistence;
+using TraineesAccounting.Persistence.Abstract;
+using TraineesAccounting.Persistence.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +17,10 @@ builder.Services.AddDbContext<DatabaseContext>(
     {
         options.UseNpgsql(builder.Configuration.GetConnectionString(nameof(DatabaseContext)));
     });
+
+builder.Services.AddScoped<ITraineesRepository, TraineesRepository>();
+builder.Services.AddScoped<IProjectsRepository, ProjectsRepository>();
+builder.Services.AddScoped<IInternshipDirectionsRepository, InternshipDirectionsRepository>();
 
 var app = builder.Build();
 
