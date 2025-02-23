@@ -69,8 +69,9 @@ namespace TraineesAccounting.Api.Services
             {
                 var internshipDirection = await internshipDirectionsRepository
                     .GetById(updatedTraineeDto.InternshipDirectionId)
-                    ?? throw new Exception($"Internship direction with id: " +
-                    $"{updatedTraineeDto.InternshipDirectionId} not found");
+                    ?? throw new Exception(
+                        $"Internship direction with id: " +
+                        $"{updatedTraineeDto.InternshipDirectionId} not found");
 
                 currentTrainee.InternshipDirectionId = updatedTraineeDto.InternshipDirectionId;
                 currentTrainee.InternshipTitle = internshipDirection.InternshipTitle;
