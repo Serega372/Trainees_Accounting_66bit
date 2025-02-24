@@ -6,4 +6,7 @@
 
     public record AddInternshipDirectionRequest(
         string InternshipTitle);
+
+    public record UpdateInternshipDirectionRequest(
+        string InternshipTitle);
 }
