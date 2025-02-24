@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using TraineesAccounting.Api.Abstract;
 using TraineesAccounting.Api.Dtos;
 using TraineesAccounting.Persistence.Abstract;
 using TraineesAccounting.Persistence.Entities;
@@ -8,7 +9,7 @@ namespace TraineesAccounting.Api.Services
 {
     public class InternshipDirectionsService(
         IInternshipDirectionsRepository internshipDirectionsRepository,
-        IMapper mapper)
+        IMapper mapper) : IInternshipDirectionsService
     {
         public async Task<List<InternshipDirectionsResponse>> All()
         {
@@ -40,7 +41,7 @@ namespace TraineesAccounting.Api.Services
         {
             var currentInternshipDirection = await internshipDirectionsRepository.GetById(id)
                 ?? throw new Exception($"Internship direction with id: {id} not found");
-            
+
             currentInternshipDirection.InternshipTitle = updatedInternshipDirectionDto.InternshipTitle;
             await internshipDirectionsRepository.Update(currentInternshipDirection);
         }
