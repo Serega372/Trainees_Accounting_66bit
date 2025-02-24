@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using TraineesAccounting.Api.Abstract;
 using TraineesAccounting.Api.Services;
 using TraineesAccounting.Persistence;
 using TraineesAccounting.Persistence.Abstract;
