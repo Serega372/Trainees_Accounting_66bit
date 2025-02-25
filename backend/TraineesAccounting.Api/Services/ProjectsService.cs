@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using TraineesAccounting.Api.Abstract;
 using TraineesAccounting.Api.Dtos;
 using TraineesAccounting.Persistence.Abstract;
 using TraineesAccounting.Persistence.Entities;
@@ -8,7 +9,7 @@ namespace TraineesAccounting.Api.Services
     public class ProjectsService(
         IProjectsRepository projectsRepository,
         IMapper mapper
-        )
+        ) : IProjectsService
     {
         public async Task<List<ProjectsResponse>> All()
         {
