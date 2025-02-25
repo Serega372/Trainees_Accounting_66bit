@@ -20,10 +20,9 @@ namespace TraineesAccounting.Api.Services
 
         public async Task<InternshipDirectionsResponse?> GetById(Guid id)
         {
-            var internshipDirection = await internshipDirectionsRepository.GetById(id);
-            return internshipDirection is null
-                ? throw new Exception($"Internship direction with id: {id} not found")
-                : mapper.Map<InternshipDirectionsResponse>(internshipDirection);
+            var internshipDirection = await internshipDirectionsRepository.GetById(id)
+                ?? throw new Exception($"Internship direction with id: {id} not found");
+            return mapper.Map<InternshipDirectionsResponse>(internshipDirection);
         }
 
         public async Task<List<InternshipDirectionsResponse>> GetByPage(int page, int pageSize)

@@ -21,10 +21,9 @@ namespace TraineesAccounting.Api.Services
 
         public async Task<TraineesResponse> GetById(Guid id)
         {
-            var trainee = await traineesRepository.GetById(id);
-            return trainee is null
-                ? throw new Exception($"Trainee with id: {id} not found")
-                : mapper.Map<TraineesResponse>(trainee);
+            var trainee = await traineesRepository.GetById(id)
+                ?? throw new Exception($"Trainee with id: {id} not found");
+            return mapper.Map<TraineesResponse>(trainee);
         }
 
         public async Task<List<TraineesResponse>> GetByPage(int page, int pageSize)
