@@ -10,7 +10,8 @@ namespace TraineesAccounting.Api.Services
         ITraineesRepository traineesRepository,
         IInternshipDirectionsRepository internshipDirectionsRepository,
         IProjectsRepository projectsRepository,
-        IMapper mapper) : ITraineesService
+        IMapper mapper
+        ) : ITraineesService
     {
         public async Task<List<TraineesResponse>> All()
         {
