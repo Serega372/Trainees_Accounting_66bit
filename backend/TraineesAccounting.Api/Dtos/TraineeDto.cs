@@ -19,7 +19,7 @@
         string Gender,
         string Email,
         string? PhoneNumber,
-        DateOnly Birtday,
+        DateOnly Birthday,
         Guid InternshipDirectionId,
         Guid ProjectId);
 
@@ -29,7 +29,7 @@
         string Gender,
         string Email,
         string? PhoneNumber,
-        DateOnly Birtday,
+        DateOnly Birthday,
         Guid InternshipDirectionId,
         Guid ProjectId);
 }

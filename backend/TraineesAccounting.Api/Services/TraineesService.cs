@@ -62,7 +62,7 @@ namespace TraineesAccounting.Api.Services
             currentTrainee.Gender = updatedTraineeDto.Gender;
             currentTrainee.Email = updatedTraineeDto.Email;
             currentTrainee.PhoneNumber = updatedTraineeDto.PhoneNumber;
-            currentTrainee.Birthday = updatedTraineeDto.Birtday;
+            currentTrainee.Birthday = updatedTraineeDto.Birthday;
 
             if (currentTrainee.InternshipDirectionId
                 != updatedTraineeDto.InternshipDirectionId)
