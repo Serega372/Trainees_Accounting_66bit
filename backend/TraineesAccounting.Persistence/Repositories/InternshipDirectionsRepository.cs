@@ -46,6 +46,12 @@ namespace TraineesAccounting.Persistence.Repositories
 
         public async Task Delete(Guid id)
         {
+            var internshipDirection = await databaseContext.InternshipDirections
+                .Include(i => i.Trainees)
+                .FirstOrDefaultAsync(i => i.Id == id);
+
+            foreach (var trainee in internshipDirection.Trainees) trainee.InternshipTitle = "";
+
             await databaseContext.InternshipDirections
                 .Where(i => i.Id == id)
                 .ExecuteDeleteAsync();
