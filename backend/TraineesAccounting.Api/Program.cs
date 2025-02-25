@@ -25,6 +25,7 @@ builder.Services.AddScoped<IProjectsRepository, ProjectsRepository>();
 builder.Services.AddScoped<IInternshipDirectionsRepository, InternshipDirectionsRepository>();
 builder.Services.AddScoped<ITraineesService, TraineesService>();
 builder.Services.AddScoped<IInternshipDirectionsService, InternshipDirectionsService>();
+builder.Services.AddScoped<IProjectsService, ProjectsService>();
 builder.Services.AddAutoMapper(typeof(AppMappingProfile));
 
 var app = builder.Build();
