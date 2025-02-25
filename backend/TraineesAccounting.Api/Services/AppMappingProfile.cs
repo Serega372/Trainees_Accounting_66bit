@@ -17,6 +17,11 @@ namespace TraineesAccounting.Api.Services
             CreateMap<AddInternshipDirectionRequest, InternshipDirectionEntity>();
             CreateMap<UpdateInternshipDirectionRequest, InternshipDirectionEntity>();
             CreateMap<InternshipDirectionEntity, InternshipDirectionsResponse>();
+
+            CreateMap<ProjectsResponse, ProjectEntity>();
+            CreateMap<AddProjectRequest, ProjectEntity>();
+            CreateMap<UpdateProjectRequest, ProjectEntity>();
+            CreateMap<ProjectEntity, ProjectsResponse>();
         }
     }
 }
